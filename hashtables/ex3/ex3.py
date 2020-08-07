@@ -2,9 +2,18 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    List = []
+    cache = {}
 
-    return result
+    for i in arrays:
+        for num in i:
+            if num not in cache:
+                cache[num] = 1
+            else:
+                List.append(num)
+    List = list(dict.fromkeys(List))
+
+    return List
 
 
 if __name__ == "__main__":
